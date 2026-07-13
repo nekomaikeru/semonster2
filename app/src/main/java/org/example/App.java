@@ -3,6 +3,9 @@
  */
 package org.example;
 
+import java.util.LinkedList;
+import java.util.Random;
+
 public class App {
   public String getGreeting() {
     return "こんにちは SEMonster!";
@@ -10,5 +13,17 @@ public class App {
 
   public static void main(String[] args) {
     System.out.println(new App().getGreeting());
+
+    Random r = new Random();
+    LinkedList<Integer> list = new LinkedList<>();
+    Player p = new Player("user");
+
+    for (int i = 0; i < 5; i++) {
+      list.add(r.nextInt(5));
+      list.add(r.nextInt(4) + 1);
+    }
+    p.drawMonsters(list);
+    System.out.println(p.toString());
+    System.out.println(list.toString());
   }
 }
