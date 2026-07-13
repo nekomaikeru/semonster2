@@ -2,9 +2,46 @@ package org.example;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
+
 public class MonsterTest {
-  public void appHasAGreeting() {
-    Monster monster = new Monster();
-    assertEquals(monster.name + ":レア度[" + monster.rare + "]", monster);
+  @Test
+  public void toStringTest() {
+    String name = "スライム";
+    int rare = 0;
+    Monster monster = new Monster(name, rare);
+    assertEquals(monster.name + ":レア度[" + monster.rare + "]", monster.toString());
+  }
+
+  @Test
+  public void constructorTest() {
+    String name = "スライム";
+    int rare = 0;
+    Monster monster = new Monster(name, rare);
+    assertEquals(monster.name, name);
+    assertEquals(monster.rare, rare);
+  }
+
+  @Test
+  public void summonMonsterTest() {
+    assertEquals("スライム", Monster.summonMonster(0));
+  }
+
+  @Test
+  public void evolveTestUnderRare3() {
+    String name = "スライム";
+    int rare = 0;
+    Monster monster = new Monster(name, rare);
+    monster.evolve();
+    assertEquals("スライム", monster.name);
+  }
+
+  @Test
+  public void evolveTestOverRare3() {
+    String name = "スライム";
+    int rare = 3;
+    Monster monster = new Monster(name, rare);
+    monster.evolve();
+    assertEquals("キングスライム", monster.name);
   }
 }
