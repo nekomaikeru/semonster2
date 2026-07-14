@@ -10,7 +10,7 @@ public class MonsterTest {
     String name = "スライム";
     int rare = 0;
     Monster monster = new Monster(name, rare);
-    assertEquals(monster.name + ":レア度[" + monster.rare + "]", monster.toString());
+    assertEquals("スライム" + ":レア度[" + "0" + "]", monster.toString());
   }
 
   @Test
