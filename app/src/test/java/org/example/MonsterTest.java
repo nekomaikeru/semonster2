@@ -10,7 +10,7 @@ public class MonsterTest {
     String name = "スライム";
     int rare = 0;
     Monster monster = new Monster(name, rare);
-    assertEquals(monster.name + ":レア度[" + monster.rare + "]", monster.toString());
+    assertEquals("スライム" + ":レア度[" + "0" + "]", monster.toString());
   }
 
   @Test
@@ -43,5 +43,23 @@ public class MonsterTest {
     Monster monster = new Monster(name, rare);
     monster.evolve();
     assertEquals("キングスライム", monster.name);
+  }
+
+  @Test
+  public void reincarnationTestEqual4() {
+    String name = "スライム";
+    int rare = 4;
+    Monster monster = new Monster(name, rare);
+    monster.reincarnation(1);
+    assertEquals("サハギン", monster.name);
+  }
+
+  @Test
+  public void reincarnationTestNotEqual4() {
+    String name = "スライム";
+    int rare = 0;
+    Monster monster = new Monster(name, rare);
+    monster.reincarnation(1);
+    assertEquals("スライム", monster.name);
   }
 }
