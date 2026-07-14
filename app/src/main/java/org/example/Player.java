@@ -19,6 +19,14 @@ public class Player {
     }
   }
 
+  public void mulligan(LinkedList<Integer> list, int... positions) {
+    Iterator<Integer> itr = list.iterator();
+    for (int pos : positions) {
+      Monster m = new Monster(Monster.summonMonster(itr.next()), itr.next());
+      this.deck.set(pos, m);
+    }
+  }
+
   @Override
   public String toString() {
     String tmp = "Deck:" + this.name + "\n";
