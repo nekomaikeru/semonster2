@@ -62,4 +62,13 @@ public class MonsterTest {
     monster.reincarnation(1);
     assertEquals("スライム", monster.name);
   }
+
+  @Test
+  public void reincarnationTestNotEqualRare() {
+    String name = "スライム";
+    int rare = 4;
+    Monster monster = new Monster(name, rare);
+    monster.reincarnation(1);
+    assertEquals(4, monster.rare);
+  }
 }
