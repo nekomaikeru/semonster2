@@ -46,7 +46,7 @@ public class PlayerTest {
   public void mulliganTest() {
     LinkedList<Integer> list1 = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 4));
     LinkedList<Integer> list2 = new LinkedList<>(List.of(4, 3, 0, 2, 0, 4));
-    Player p = new Player("user");
+    Player p = new Player("user", 20);
     p.drawMonsters(list1);
     p.mulligan(list2, 0, 2, 4);
     assertEquals("シーサーペント", p.deck.get(0).name);
