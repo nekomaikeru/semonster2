@@ -18,7 +18,7 @@ public class App {
     LinkedList<Integer> list = new LinkedList<>();
     Player p = new Player("user");
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 8; i++) {
       list.add(r.nextInt(5));
       list.add(r.nextInt(4) + 1);
     }

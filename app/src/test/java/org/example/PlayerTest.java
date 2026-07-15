@@ -19,7 +19,7 @@ public class PlayerTest {
 
   @Test
   public void drawMonstersTest() {
-    LinkedList<Integer> list = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 4));
+    LinkedList<Integer> list = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 1, 0, 2, 1, 3, 2, 4));
     Player p = new Player("user");
     p.drawMonsters(list);
     assertEquals(p.deck.get(0).name, "スライム");
@@ -31,7 +31,13 @@ public class PlayerTest {
     assertEquals(p.deck.get(3).name, "デュラハン");
     assertEquals(p.deck.get(3).rare, 4);
     assertEquals(p.deck.get(4).name, "シーサーペント");
-    assertEquals(p.deck.get(4).rare, 4);
+    assertEquals(p.deck.get(4).rare, 1);
+    assertEquals(p.deck.get(5).name, "スライム");
+    assertEquals(p.deck.get(5).rare, 2);
+    assertEquals(p.deck.get(6).name, "サハギン");
+    assertEquals(p.deck.get(6).rare, 3);
+    assertEquals(p.deck.get(7).name, "ドラゴン");
+    assertEquals(p.deck.get(7).rare, 4);
   }
 
   @Test
