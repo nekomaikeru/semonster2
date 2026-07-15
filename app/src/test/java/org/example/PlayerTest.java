@@ -35,6 +35,25 @@ public class PlayerTest {
   }
 
   @Test
+  public void mulliganTest() {
+    LinkedList<Integer> list1 = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 4));
+    LinkedList<Integer> list2 = new LinkedList<>(List.of(4, 3, 0, 2, 0, 4));
+    Player p = new Player("user");
+    p.drawMonsters(list1);
+    p.mulligan(list2, 0, 2, 4);
+    assertEquals("シーサーペント", p.deck.get(0).name);
+    assertEquals(3, p.deck.get(0).rare);
+    assertEquals("サハギン", p.deck.get(1).name);
+    assertEquals(2, p.deck.get(1).rare);
+    assertEquals("スライム", p.deck.get(2).name);
+    assertEquals(2, p.deck.get(2).rare);
+    assertEquals("デュラハン", p.deck.get(3).name);
+    assertEquals(4, p.deck.get(3).rare);
+    assertEquals("スライム", p.deck.get(4).name);
+    assertEquals(4, p.deck.get(4).rare);
+  }
+
+  @Test
   public void toStringTest() {
     LinkedList<Integer> list = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 4));
     Player p = new Player("user");
