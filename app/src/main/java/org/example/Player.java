@@ -6,10 +6,12 @@ import java.util.LinkedList;
 
 public class Player {
   String name;
+  int HP;
   ArrayList<Monster> deck = new ArrayList<>();
 
-  Player(String name) {
+  Player(String name, int HP) {
     this.name = name;
+    this.HP = HP;
   }
 
   public void drawMonsters(LinkedList<Integer> list) {
@@ -21,7 +23,7 @@ public class Player {
 
   @Override
   public String toString() {
-    String tmp = "Deck:" + this.name + "\n";
+    String tmp = "Deck:" + this.name + " HP:" + this.HP + "\n";
     for (Monster m : this.deck) {
       tmp += m.toString() + "\n";
     }

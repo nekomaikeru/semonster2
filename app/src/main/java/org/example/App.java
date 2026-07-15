@@ -16,7 +16,7 @@ public class App {
 
     Random r = new Random();
     LinkedList<Integer> list = new LinkedList<>();
-    Player p = new Player("user");
+    Player p = new Player("user", 20);
 
     for (int i = 0; i < 8; i++) {
       list.add(r.nextInt(5));

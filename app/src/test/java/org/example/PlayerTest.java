@@ -13,14 +13,14 @@ public class PlayerTest {
   @Test
   public void constructorTest() {
     String name = "user";
-    Player p = new Player(name);
+    Player p = new Player(name, 20);
     assertEquals(p.name, name);
   }
 
   @Test
   public void drawMonstersTest() {
     LinkedList<Integer> list = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 1, 0, 2, 1, 3, 2, 4));
-    Player p = new Player("user");
+    Player p = new Player("user", 20);
     p.drawMonsters(list);
     assertEquals(p.deck.get(0).name, "スライム");
     assertEquals(p.deck.get(0).rare, 1);
@@ -43,10 +43,10 @@ public class PlayerTest {
   @Test
   public void toStringTest() {
     LinkedList<Integer> list = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 4));
-    Player p = new Player("user");
+    Player p = new Player("user", 20);
     p.drawMonsters(list);
 
-    assertEquals("Deck:user\n" + //
+    assertEquals("Deck:user HP:20\n" + //
         "スライム:レア度[1]\n" + //
         "サハギン:レア度[2]\n" + //
         "ドラゴン:レア度[3]\n" + //
