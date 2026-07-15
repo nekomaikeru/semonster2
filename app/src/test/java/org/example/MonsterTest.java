@@ -62,5 +62,6 @@ public class MonsterTest {
     Monster monster = new Monster(name, rare);
     monster.reincarnation(1);
     assertEquals("スライム", monster.name);
+    assertEquals(0, monster.rare);
   }
 }
