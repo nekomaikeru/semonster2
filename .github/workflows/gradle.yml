@@ -36,6 +36,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
 
+    - name: Show PlayerTest.java
+      run: cat app/src/test/java/org/example/PlayerTest.java
+
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
