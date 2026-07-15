@@ -13,14 +13,16 @@ public class PlayerTest {
   @Test
   public void constructorTest() {
     String name = "user";
-    Player p = new Player(name);
-    assertEquals(p.name, name);
+    Player p = new Player(name, 20);
+
+    assertEquals(p.name, "user");
+    assertEquals(p.hp, 20);
   }
 
   @Test
   public void drawMonstersTest() {
-    LinkedList<Integer> list = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 4));
-    Player p = new Player("user");
+    LinkedList<Integer> list = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 1, 0, 2, 1, 3, 2, 4));
+    Player p = new Player("user", 20);
     p.drawMonsters(list);
     assertEquals(p.deck.get(0).name, "スライム");
     assertEquals(p.deck.get(0).rare, 1);
@@ -31,14 +33,20 @@ public class PlayerTest {
     assertEquals(p.deck.get(3).name, "デュラハン");
     assertEquals(p.deck.get(3).rare, 4);
     assertEquals(p.deck.get(4).name, "シーサーペント");
-    assertEquals(p.deck.get(4).rare, 4);
+    assertEquals(p.deck.get(4).rare, 1);
+    assertEquals(p.deck.get(5).name, "スライム");
+    assertEquals(p.deck.get(5).rare, 2);
+    assertEquals(p.deck.get(6).name, "サハギン");
+    assertEquals(p.deck.get(6).rare, 3);
+    assertEquals(p.deck.get(7).name, "ドラゴン");
+    assertEquals(p.deck.get(7).rare, 4);
   }
 
   @Test
   public void mulliganTest() {
     LinkedList<Integer> list1 = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 4));
     LinkedList<Integer> list2 = new LinkedList<>(List.of(4, 3, 0, 2, 0, 4));
-    Player p = new Player("user");
+    Player p = new Player("user", 20);
     p.drawMonsters(list1);
     p.mulligan(list2, 0, 2, 4);
     assertEquals("シーサーペント", p.deck.get(0).name);
@@ -56,10 +64,10 @@ public class PlayerTest {
   @Test
   public void toStringTest() {
     LinkedList<Integer> list = new LinkedList<>(List.of(0, 1, 1, 2, 2, 3, 3, 4, 4, 4));
-    Player p = new Player("user");
+    Player p = new Player("user", 20);
     p.drawMonsters(list);
 
-    assertEquals("Deck:user\n" + //
+    assertEquals("Deck:user HP:20\n" + //
         "スライム:レア度[1]\n" + //
         "サハギン:レア度[2]\n" + //
         "ドラゴン:レア度[3]\n" + //
