@@ -21,6 +21,12 @@ public class Monster {
 
   }
 
+  void reincarnation(int number) {
+    if (this.rare == 4) {
+      this.name = summonMonster(number);
+    }
+  }
+
   @Override
   public String toString() {
 
