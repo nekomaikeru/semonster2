@@ -14,6 +14,7 @@ public class PlayerTest {
   public void constructorTest() {
     String name = "user";
     Player p = new Player(name, 20);
+
     assertEquals(p.name, "user");
     assertEquals(p.hp, 20);
   }
